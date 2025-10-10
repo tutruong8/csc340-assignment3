@@ -42,42 +42,22 @@ public class Animal {
 
   //Getters and setters
     //Animal ID
-    public Long getAnimalId() {
-        return animalId;
-    }
-    public void setAnimalId(Long animalId) {
-        this.animalId = animalId;
-    }
+    public Long getAnimalId() { return animalId;}
+    public void setAnimalId(Long animalId) { this.animalId = animalId;}
 
     //Name
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getName() { return name;}
+    public void setName(String name) { this.name = name;}
 
     //Description
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public String getDescription() { return description;}
+    public void setDescription(String description) { this.description = description;}
 
     //Species
-    public String getSpecies() {
-        return species;
-    }
-    public void setSpecies(String species) {
-        this.species = species;
-    }
+    public String getSpecies() { return species;}
+    public void setSpecies(String species) { this.species = species;}
 
     //Status
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public String getStatus() { return status;}
+    public void setStatus(String status) { this.status = status;}
 }
