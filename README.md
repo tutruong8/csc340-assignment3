@@ -16,8 +16,9 @@
     - Locate your database project.
     - On the project dashboard, click on "Connect" and select Java.
     - Copy the connection string provided.
-    - Paste it as a value for the property `spring.datasource.url`. No quotation marks.
-- Build and run the main class. You should see a new table created in the Neon database.
+    - Paste as a value in in 'spring.datasource.url' and remove the part after "postgresql://" where the text is formated as            "username:password@".
+    - Take the username part that you removed and put it as value in 'spring.datasource.username' and the password part (without        the @) in 'spring.datasource.password'.
+    - Build and run the main class. You should see a new table created in the Neon database.
 
 ## Demo
 https://uncg-my.sharepoint.com/:v:/g/personal/tttruong2_uncg_edu/EXMsqrz7_aFNu0LqrUSYjgIBx-xDn1B1kxxiKXD_4SL9DQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=0ZxK4P
