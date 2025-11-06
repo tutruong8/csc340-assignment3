@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
-@RestController
+@Controller
 public class AnimalController {
     @Autowired
     private AnimalService animalService;
@@ -25,8 +26,10 @@ public class AnimalController {
    * @return List of all animals in the database
    */
     @GetMapping("/animal")
-    public Object getAllAnimals() {
-        return animalService.getAllAnimals();
+    public Object getAllAnimals(Model model) {
+        model.addAttribute("animals", animalService.getAllAnimals());
+        model.addAttribute("title", "Animal List");
+        return "animal-list";
     }
 
     /**
@@ -35,8 +38,10 @@ public class AnimalController {
    * @return The animal with the wanted ID
    */
     @GetMapping("/animal/{id}")
-    public Object getAnimalById(@PathVariable long id) {
-        return animalService.getAnimalById(id);
+    public Object getAnimalById(@PathVariable long id, Model model) {
+        model.addAttribute("animal", animalService.getAnimalById(id));
+        model.addAttribute("title", "Animal #" + id);
+        return "animal-details";
     }
 
     /**
@@ -45,11 +50,13 @@ public class AnimalController {
    * @return The animal with the wanted name
    */
     @GetMapping("/animal/name")
-    public Object getAnimalByName(@RequestParam String name) {
+    public Object getAnimalByName(@RequestParam String name, Model model) {
         if (name != null) {
-            return animalService.getAnimalByName(name);
+            model.addAttribute("animal", animalService.getAnimalByName(name));
+            model.addAttribute("title", "Animal by Name: " + name);
+            return "animal-list";
         } else {
-            return animalService.getAllAnimals();
+            return "redirect:/animal";
         }
     }
 
@@ -59,11 +66,13 @@ public class AnimalController {
    * @return The animal with the wanted species
    */
     @GetMapping("/animal/species/{species}")
-    public Object getAnimalBySpecies(@PathVariable String species) {
+    public Object getAnimalBySpecies(@PathVariable String species, Model model) {
         if (species != null) {
-            return animalService.getAnimalBySpecies(species);
+            model.addAttribute("animals", animalService.getAnimalBySpecies(species));
+            model.addAttribute("title", "Animals by Species: " + species);
+            return "animal-list";
         } else {
-            return animalService.getAllAnimals();
+            return "redirect:/animal";
         }
     }
 
@@ -73,11 +82,13 @@ public class AnimalController {
    * @return The animal with the wanted status
    */
     @GetMapping("/animal/status/{status}")
-    public Object getAnimalByStatus(@PathVariable String status) {
+    public Object getAnimalByStatus(@PathVariable String status, Model model) {
         if (status != null) {
-            return animalService.getAnimalByStatus(status);
+            model.addAttribute("animals", animalService.getAnimalByStatus(status));
+            model.addAttribute("title", "Animals by Status: " + status);
+            return "animal-list";
         } else {
-            return animalService.getAllAnimals();
+            return "redirect:/animal";
         }
     }
 
