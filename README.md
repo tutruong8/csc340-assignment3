@@ -21,4 +21,7 @@
     - Build and run the main class. You should see a new table created in the Neon database.
 
 ## Demo
-https://uncg-my.sharepoint.com/:v:/g/personal/tttruong2_uncg_edu/EXMsqrz7_aFNu0LqrUSYjgIBx-xDn1B1kxxiKXD_4SL9DQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=0ZxK4P
+- CRUD API:
+  - https://uncg-my.sharepoint.com/:v:/g/personal/tttruong2_uncg_edu/EXMsqrz7_aFNu0LqrUSYjgIBx-xDn1B1kxxiKXD_4SL9DQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=0ZxK4P
+- MVC APP:
+  - https://uncg-my.sharepoint.com/:v:/g/personal/tttruong2_uncg_edu/EatcBjLI9VtFm2T4EDd9eQABJHyR91P09sonDZ12KCB5tw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=isa3Wn
