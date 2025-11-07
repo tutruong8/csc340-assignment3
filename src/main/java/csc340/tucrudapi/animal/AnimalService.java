@@ -60,6 +60,15 @@ public class AnimalService {
     }
 
     /**
+   * Method to get animal by image in the database
+   * @param image Image URL of the animal to get
+   * @return animal with the specified image
+   */
+    public Object getAnimalByImage(String image) {
+        return animalRepo.getAnimalbyImage(image);
+    }
+
+    /**
    * Method to create new animal in the database
    * @param animal Animal to create
    * @return created animal

@@ -20,23 +20,26 @@ public class Animal {
   private String description; //Describe the animal
   private String species; //Is it a snake? bird? fish? mammal?
   private String status; //is it endangered? extinct? alive? 
+  private String image; //image URL of animal
 
   //Constructors
     public Animal(){}
 
-    public Animal(Long animalId, String name, String description, String species, String status) {
+    public Animal(Long animalId, String name, String description, String species, String status, String image) {
         this.animalId = animalId;
         this.name = name;
         this.description = description;
         this.species = species;
         this.status = status;
+        this.image = image;
     }
 
-    public Animal(String name, String description, String species, String status) {
+    public Animal(String name, String description, String species, String status, String image) {
         this.name = name;
         this.description = description;
         this.species = species;
         this.status = status;
+        this.image = image;
     }
 
 
@@ -60,4 +63,8 @@ public class Animal {
     //Status
     public String getStatus() { return status;}
     public void setStatus(String status) { this.status = status;}
+
+    //Image
+    public String getImage() { return image;}
+    public void setImage(String image) { this.image = image;}
 }

@@ -93,24 +93,56 @@ public class AnimalController {
     }
 
     /**
+   * Endpoint to get the image of a animal in the database
+   * @param image Image URL of the animal to get
+   * @return The animal with the wanted image
+   */
+    @GetMapping("/animal/image")
+    public Object getAnimalByImage(@RequestParam String image, Model model) {
+        if (image != null) {
+            model.addAttribute("animal", animalService.getAnimalByImage(image));
+            model.addAttribute("title", "Animal by Image: " + image);
+            return "animal-list";
+        } else {
+            return "redirect:/animal";
+        }
+    }
+
+    @GetMapping("/animal/createForm")
+    public Object showCreateForm(Model model) {
+        Animal newAnimal = new Animal();
+        model.addAttribute("animal", newAnimal);
+        model.addAttribute("title", "Create Animal");
+        return "animal-create";
+    }
+     /**
    * Endpoint to create/add a animal in the database
    * @param animal Animal to add
    * @return added animal
    */
     @PostMapping("/animal")
-    public Object createAnimal(@RequestBody Animal animal) {
-        return animalService.createAnimal(animal);
+    public Object createAnimal(Animal animal) {
+        Animal newAnimal = animalService.createAnimal(animal);
+        return "redirect:/animal/" + newAnimal.getAnimalId();
     }
 
+
+    @GetMapping("/animal/updateForm/{id}")
+    public Object showUpdateForm(@PathVariable Long id, Model model) {
+        model.addAttribute("animal", animalService.getAnimalById(id));
+        model.addAttribute("title", "Update Animal: " + id);
+        return "animal-update";
+    }
     /**
    * Endpoint to update a animal in the database
    * @param id ID of the animal to update
    * @param animal Animal to update
    * @return updated animal
    */
-    @PutMapping("/animal/{id}")
-    public Animal updateAnimal(@PathVariable Long id, @RequestBody Animal animal) {
-        return animalService.updateAnimal(id, animal);
+    @PostMapping("/animal/{id}")
+    public Object updateAnimal(@PathVariable Long id, Animal animal) {
+        animalService.updateAnimal(id, animal);
+        return "redirect:/animal/" + id;
     }
 
     /**
@@ -118,10 +150,10 @@ public class AnimalController {
    * @param id ID of the animal to delete
    * @return list of animals in database after deletion
    */
-    @DeleteMapping("/animal/{id}")
+    @GetMapping("/animal/delete/{id}")
     public Object deleteAnimal(@PathVariable Long id) {
         animalService.deleteAnimal(id);
-        return animalService.getAllAnimals();
+        return "redirect:/animal";
     }
 
     /**

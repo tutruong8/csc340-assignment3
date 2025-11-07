@@ -15,4 +15,7 @@ public interface AnimalRepo extends JpaRepository<Animal, Long> {
 
     @Query(value = "Select * from animals s where s.status like CONCAT('%',?1,'%')", nativeQuery = true)
     List<Animal> getAnimalbyStatus(String status);
+
+    @Query(value = "Select * from animals s where s.image like CONCAT('%',?1,'%')", nativeQuery = true)
+    List<Animal> getAnimalbyImage(String image);
 }

@@ -24,16 +24,10 @@
     <ul class="navbar-nav mr-auto">
         <ul class="nav nav-underline">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/animal">Animal List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="details.html">Details</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="update-animal-form.html">Update Animal</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="new-animal-form.html">Add Animal</a>
+                <a class="nav-link active" aria-current="page" href="/animal/createForm">Add Animal</a>
             </li>
         </ul>
     </ul>
@@ -41,26 +35,26 @@
 </nav>
 
   <!--New Animal Form with inputs-->>
-    <form>
+    <form id="new-animal" action="/animal" method="post"">
       <div class="form-group">
         <label for="animalName">Animal Name</label>
-        <input type="name" class="form-control" id="animalName" aria-describedby="nameHelp" placeholder="Enter Animal Name">
-        <small id="nameHelp" class="form-text text-muted">What is the name of the animal?</small>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Animal Name">
       </div>
       <div class="form-group">
         <label for="animalSummary">Animal Summary</label>
-        <input type="summary" class="form-control" id="animalSummary" aria-describedby="summaryHelp" placeholder="Enter Animal Summary">
-        <small id="summaryHelp" class="form-text text-muted">Enter a brief summary for the animal.</small>
+        <input type="text" class="form-control" id="description" name="description" placeholder="Enter Animal Summary">
       </div>
       <div class="form-group">
-        <label for="animalDetails">Animal Details</label>
-        <input type="detail" class="form-control" id="animalDetails" aria-describedby="detailHelp" placeholder="Enter Animal Details">
-        <small id="detailHelp" class="form-text text-muted">Enter more details about the animal.</small>
+        <label for="animalDetails">Animal Species</label>
+        <input type="text" class="form-control" id="species" name="species" placeholder="Enter Animal Species">
+      </div>
+      <div class="form-group">
+        <label for="animalDetails">Animal Status</label>
+        <input type="text" class="form-control" id="status" name="status" placeholder="Enter Animal Status">
       </div>
       <div class="form-group">
         <label for="animalImage">Animal Image</label>
-        <input type="imageUrl" class="form-control" id="animaImage" aria-describedby="imageHelp" placeholder="Enter URL of image of Animal">
-        <small id="imageHelp" class="form-text text-muted">Enter a URL of the image of the animal you want to add.</small>
+        <input type="text" class="form-control" id="image" name="image" placeholder="Enter URL of image of Animal">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
   </form>

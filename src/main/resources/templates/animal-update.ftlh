@@ -24,16 +24,10 @@
     <ul class="navbar-nav mr-auto">
         <ul class="nav nav-underline">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="animal-list.ftlh">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="details.html">Details</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="update-animal-form.html">Update Animal</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="new-animal-form.html">Add Animal</a>
+                <a class="nav-link" aria-current="page" href="/animal/createForm">Add Animal</a>
             </li>
         </ul>
     </ul>
@@ -41,28 +35,39 @@
 </nav>
 
   <!--Update Animal Form with inputs-->>
-    <form>
+    <form id="new-animal" action="/animal/${animal.animalId}" method="post">
+      <div class="form-group">
+        <label for="animalID">Animal ID</label>
+        <input type="text" class="form-control" id="animalid" aria-describedby="idHelp" name="animalid" value="${animal.animalId}" placeholder="Enter Animal ID">
+        <small id="idHelp" class="form-text text-muted">What is the ID of the animal?</small>
+      </div>
       <div class="form-group">
         <label for="animalName">Animal Name</label>
-        <input type="name" class="form-control" id="animalName" aria-describedby="nameHelp" placeholder="Enter Animal Name">
+        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" value="${animal.name}" placeholder="Enter Animal Name">
         <small id="nameHelp" class="form-text text-muted">What is the name of the animal?</small>
       </div>
       <div class="form-group">
         <label for="animalSummary">Animal Summary</label>
-        <input type="summary" class="form-control" id="animalSummary" aria-describedby="summaryHelp" placeholder="Enter Animal Summary">
+        <input type="text" class="form-control" id="description" aria-describedby="summaryHelp" name="description" value="${animal.description}" placeholder="Enter Animal Summary">
         <small id="summaryHelp" class="form-text text-muted">Enter a brief summary for the animal.</small>
       </div>
       <div class="form-group">
-        <label for="animalDetails">Animal Details</label>
-        <input type="detail" class="form-control" id="animalDetails" aria-describedby="detailHelp" placeholder="Enter Animal Details">
-        <small id="detailHelp" class="form-text text-muted">Enter more details about the animal.</small>
+        <label for="animalDetails">Animal Species</label>
+        <input type="text" class="form-control" id="species" aria-describedby="speciesHelp" name="species" value="${animal.species}" placeholder="Enter Animal Species">
+        <small id="speciesHelp" class="form-text text-muted">Enter animal species.</small>
+      </div>
+      <div class="form-group">
+        <label for="animalDetails">Animal Status</label>
+        <input type="text" class="form-control" id="status" aria-describedby="statusHelp" name="status" value="${animal.status}" placeholder="Enter Animal Status">
+        <small id="statusHelp" class="form-text text-muted">Enter animal status.</small>
       </div>
       <div class="form-group">
         <label for="animalImage">Animal Image</label>
-        <input type="imageUrl" class="form-control" id="animaImage" aria-describedby="imageHelp" placeholder="Enter URL of image of Animal">
+        <input type="text" class="form-control" id="image" aria-describedby="imageHelp" name="image" value="${animal.image}" placeholder="Enter URL of image of Animal">
         <small id="imageHelp" class="form-text text-muted">Enter a URL of the image of the animal you want to add.</small>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="/animal/delete/${animal.animalId}" class="btn btn-danger">Delete</a>
   </form>
 
   <!--Imports Bootstrap 5.3.8 JS-->
